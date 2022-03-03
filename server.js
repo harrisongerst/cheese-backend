@@ -77,6 +77,14 @@ app.post("/cheeses", async (req, res) => {
     }
 });
 
+app.get("/cheeses/:id", async (req, res) => {
+  try {
+      res.json(await Cheese.findOne({"_id": req.params.id}));
+  } catch(err) {
+      res.status(400).json(error);
+  }
+});
+
 // CHEESE UPDATE ROUTE
 app.put("/cheeses/:id", async (req, res) => {
     try {
