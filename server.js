@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 // CHEESE INDEX ROUTE
-app.get("/cheeses", async (req, res) => {
+app.get("/cheeses/", async (req, res) => {
     try {
       // send all people
         res.json(await Cheese.find({}));
@@ -67,7 +67,7 @@ app.get("/cheeses", async (req, res) => {
 });
 
   // CHEESE CREATE ROUTE
-app.post("/cheeses", async (req, res) => {
+app.post("/cheeses/", async (req, res) => {
     try {
       // send all people
         res.json(await Cheese.create(req.body));
